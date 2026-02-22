@@ -439,9 +439,9 @@ class PlaneConfigEditor:
             rx = [v[0] for v in self.speed_rot]
             ry = [v[1] for v in self.speed_rot]
             rz = [v[2] for v in self.speed_rot]
-            line_rx, = self.ax2.plot(x_vals, rx, marker="o", picker=5, label="X", color="r")
-            line_ry, = self.ax2.plot(x_vals, ry, marker="o", picker=5, label="Y", color="g")
-            line_rz, = self.ax2.plot(x_vals, rz, marker="o", picker=5, label="Z", color="b")
+            line_rx, = self.ax2.plot(x_vals, rx, marker="o", picker=5, label="Pitch", color="r")
+            line_ry, = self.ax2.plot(x_vals, ry, marker="o", picker=5, label="Yaw", color="g")
+            line_rz, = self.ax2.plot(x_vals, rz, marker="o", picker=5, label="Roll", color="b")
             self.ax2.set_title("SpeedRot")
             self.line_map[line_rx] = ("speed_rot", 0, "X")
             self.line_map[line_ry] = ("speed_rot", 1, "Y")
@@ -453,9 +453,9 @@ class PlaneConfigEditor:
             gx = [v[0] for v in self.rot_grav]
             gy = [v[1] for v in self.rot_grav]
             gz = [v[2] for v in self.rot_grav]
-            line_gx, = self.ax3.plot(x_vals, gx, marker="o", picker=5, label="X", color="r")
-            line_gy, = self.ax3.plot(x_vals, gy, marker="o", picker=5, label="Y", color="g")
-            line_gz, = self.ax3.plot(x_vals, gz, marker="o", picker=5, label="Z", color="b") 
+            line_gx, = self.ax3.plot(x_vals, gx, marker="o", picker=5, label="Pitch", color="r")
+            line_gy, = self.ax3.plot(x_vals, gy, marker="o", picker=5, label="Yaw", color="g")
+            line_gz, = self.ax3.plot(x_vals, gz, marker="o", picker=5, label="Roll", color="b") 
             self.ax3.set_title("RotGravR")
             self.line_map[line_gx] = ("rot_grav", 0, "X")
             self.line_map[line_gy] = ("rot_grav", 1, "Y")
