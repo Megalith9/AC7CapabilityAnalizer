@@ -428,9 +428,7 @@ class PlaneConfigEditor:
             self.diff_nose,
             marker="o",
             picker=5,
-            color="#FE9A37"
         )
-        self.ax1.legend(loc="upper right")
         self.ax1.set_title("DiffNoseVelocityR")
         self.line_map[line1] = ("diff_nose", None, None)
         # ================= GRAPH 2 =================
@@ -439,28 +437,28 @@ class PlaneConfigEditor:
             rx = [v[0] for v in self.speed_rot]
             ry = [v[1] for v in self.speed_rot]
             rz = [v[2] for v in self.speed_rot]
-            line_rx, = self.ax2.plot(x_vals, rx, marker="o", picker=5, label="Pitch", color="r")
-            line_ry, = self.ax2.plot(x_vals, ry, marker="o", picker=5, label="Yaw", color="g")
-            line_rz, = self.ax2.plot(x_vals, rz, marker="o", picker=5, label="Roll", color="b")
+            line_rx, = self.ax2.plot(x_vals, rx, marker="o", picker=5, label="Pitch")
+            line_ry, = self.ax2.plot(x_vals, ry, marker="o", picker=5, label="Yaw")
+            line_rz, = self.ax2.plot(x_vals, rz, marker="o", picker=5, label="Roll")
             self.ax2.set_title("SpeedRot")
             self.line_map[line_rx] = ("speed_rot", 0, "X")
             self.line_map[line_ry] = ("speed_rot", 1, "Y")
             self.line_map[line_rz] = ("speed_rot", 2, "Z")
-            self.ax2.legend(loc="upper right")
+            self.ax2.legend(loc="upper right", fontsize="small")
         # ================= GRAPH 3 =================
         if self.rot_grav:
             x_vals = self.speed_graph
             gx = [v[0] for v in self.rot_grav]
             gy = [v[1] for v in self.rot_grav]
             gz = [v[2] for v in self.rot_grav]
-            line_gx, = self.ax3.plot(x_vals, gx, marker="o", picker=5, label="Pitch", color="r")
-            line_gy, = self.ax3.plot(x_vals, gy, marker="o", picker=5, label="Yaw", color="g")
-            line_gz, = self.ax3.plot(x_vals, gz, marker="o", picker=5, label="Roll", color="b") 
+            line_gx, = self.ax3.plot(x_vals, gx, marker="o", picker=5, label="Gravity (Upside Down)")
+            line_gy, = self.ax3.plot(x_vals, gy, marker="o", picker=5, label="Gravity (Side)")
+            line_gz, = self.ax3.plot(x_vals, gz, marker="o", picker=5, label="Unused") 
             self.ax3.set_title("RotGravR")
             self.line_map[line_gx] = ("rot_grav", 0, "X")
             self.line_map[line_gy] = ("rot_grav", 1, "Y")
             self.line_map[line_gz] = ("rot_grav", 2, "Z")
-            self.ax3.legend(loc="upper right")
+            self.ax3.legend(loc="upper right", fontsize="small")
         self.ax1.grid(True)
         self.ax2.grid(True)
         self.ax3.grid(True)    
